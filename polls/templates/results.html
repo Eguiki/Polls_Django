@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+    {% for choice in choices %}
+        <p>{{ choice.choice_text }}: {{ choice.votes }}</p>
+    {% endfor %}
+    <a href="{% url 'detail' question.id%}">Voltar</a>
+{% endblock %}

@@ -26,4 +26,6 @@ urlpatterns = [
     path('detail/<int:question_id>/',views.detail,name="detail"),
 
     path('vote/<int:question_id>/',views.vote,name="vote"),
+
+path('results/<int:question_id>/',views.results,name="results"),
 ]

@@ -25,8 +25,9 @@ def vote(request,question_id):
     else:
         selected_choice.votes = F('votes') +1
         selected_choice.save()
-        return HttpResponseRedirect(reverse("detail", args=(question.id,)))
+        return HttpResponseRedirect(reverse("results", args=(question.id,)))
 
 def results(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
-    return render(request,)
+    choices = question.choice_set.all()
+    return render(request,'results.html', context={"question": question, "choices": choices})
