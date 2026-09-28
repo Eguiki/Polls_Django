@@ -5,6 +5,7 @@ from django.db.models.deletion import CASCADE
 
 
 class Question(models.Model):
+            question_title = models.CharField(max_length=200, default="Nameless")
             question_text = models.CharField(max_length=200)
             pub_date = models.DateTimeField('date published')
 

@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block content %}
+    <h3>{{ question.question_title }}</h3>
+    <p>{{ question.question_text }}</p>
+{% endblock %} <br>
+
+{% block sobre %}
+    <form action="{% url 'vote' question.id %}" method="post">
+    {% csrf_token %}
+        {% for choice in question.choice_set.all %}
+            <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+            <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label>
+            <br>
+        {% endfor %}
+    <input type="submit" value="Vote">
+    </form>
+{% endblock %}
