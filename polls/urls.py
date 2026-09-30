@@ -27,5 +27,7 @@ urlpatterns = [
 
     path('vote/<int:question_id>/',views.vote,name="vote"),
 
-path('results/<int:question_id>/',views.results,name="results"),
+    path('results/<int:question_id>/',views.results,name="results"),
+
+    path('add',views.add,name="add")
 ]

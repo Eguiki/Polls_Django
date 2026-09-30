@@ -6,136 +6,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-```
 <title>Polls</title>
-```
 
 </head>
 
-<body style="
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f4f6f8;
-    color: #222;
-">
+<body>
 
-```
-<!-- NAVBAR -->
-<nav style="
-    background-color: #1f2937;
-    color: white;
-    padding: 18px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-">
-
-    <div>
-        <strong style="font-size: 24px;">
-            Polls
-        </strong>
-
-        <span style="
-            margin-left: 12px;
-            color: #cbd5e1;
-            font-size: 14px;
-        ">
-            Sistema de enquetes
-        </span>
-    </div>
-
-    <div>
-        <a href="{% url 'index' %}" style="
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: bold;
-        ">
-            Início
-        </a>
-
-        <a href="#" style="
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: bold;
-        ">
-            Sobre
-        </a>
-    </div>
-
-</nav>
-
-
-<!-- CONTEÚDO PRINCIPAL -->
-<main style="
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 0 25px;
-">
-
-    <section style="
-        background-color: white;
-        padding: 35px;
-        border-radius: 12px;
-        box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-    ">
 
         {% block content %}
         {% endblock %}
 
-    </section>
-
-
-    <!-- SOBRE -->
-    <section style="
-        background-color: white;
-        margin-top: 25px;
-        padding: 30px;
-        border-radius: 12px;
-        box-shadow: 0 3px 12px rgba(0,0,0,0.06);
-    ">
-
-        <h2 style="
-            margin-top: 0;
-            color: #1f2937;
-        ">
-            Sobre
-        </h2>
-
         {% block sobre %}
         {% endblock %}
 
-    </section>
-
-</main>
-
-
-<!-- FOOTER -->
-<footer style="
-    margin-top: 50px;
-    padding: 25px;
-    text-align: center;
-    background-color: #1f2937;
-    color: #cbd5e1;
-    font-size: 14px;
-">
-
-    <p style="margin: 0;">
-        Polls — Sistema de enquetes
-    </p>
-
-    <p style="
-        margin: 8px 0 0;
-        color: #94a3b8;
-    ">
-        Desenvolvido com Django
-    </p>
-
-</footer>
-```
-
 </body>
-
 </html>

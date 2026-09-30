@@ -1,9 +1,12 @@
+import datetime
+
 from django.db.models import F
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpRequest
 from django.http.response import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
 
+from .forms import QuestionForm
 from .models import Question, Choice
 
 
@@ -31,3 +34,13 @@ def results(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     choices = question.choice_set.all()
     return render(request,'results.html', context={"question": question, "choices": choices})
+
+
+def add(request:HttpRequest):
+    if request.method == 'POST':
+        form = QuestionForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse("index"))
+    context = {'form': QuestionForm()}
+    return render(request,'add.html',context)
